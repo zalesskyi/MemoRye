@@ -1,0 +1,60 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "com.zalesskyi.android.memorye"
+        minSdkVersion 21
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        all {
+            buildConfigField "String", "SECURE_PREF_NAME", '"name_prefs.xml"'
+            buildConfigField "String", "SECURE_PREF_PASSWORD", '"qwerty123"'
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // common
+    implementation supportDependencies.lifecycleExtension
+    implementation supportDependencies.design
+    implementation kotlinDependencies.jdk
+    implementation supportDependencies.exifinterface
+
+    // rx
+    implementation rxjava2Dependencies.rxkotlin
+    implementation rxjava2Dependencies.rxandroid
+
+    // Retrofit
+    implementation rootProject.ext.retrofitDependencies.converter
+    implementation rootProject.ext.retrofitDependencies.retrofit
+    implementation rootProject.ext.retrofitDependencies.adapter
+
+    // Jackson
+    implementation rootProject.ext.jacksonDependencies.interceptor
+    implementation rootProject.ext.jacksonDependencies.annotations
+    implementation rootProject.ext.jacksonDependencies.databind
+    implementation rootProject.ext.jacksonDependencies.core
+    implementation rootProject.ext.jacksonDependencies.joda
+
+
+    // Stetho
+    implementation "com.facebook.stetho:stetho:$stetho"
+
+    // Secure preferences
+    implementation rootProject.ext.securePreferencesDependencies.lib
+}
