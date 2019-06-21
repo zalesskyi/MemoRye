@@ -1,4 +1,4 @@
-package com.zalesskyi.android.memorye.network
+package com.zalesskyi.android.memorye.network.modules
 
 import com.fasterxml.jackson.annotation.JsonInclude
 import com.fasterxml.jackson.databind.DeserializationFeature
