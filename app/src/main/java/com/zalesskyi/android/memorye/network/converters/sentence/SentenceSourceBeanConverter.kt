@@ -18,7 +18,7 @@ class SentenceSourceBeanConverterImpl : BaseConverter<SentenceSourceBean, Transl
         TranslationSourceModel(
                 UUID.randomUUID().toString(),
                 EMPTY_STRING,
-                Language.valueOf(detectedLang?.language ?: EMPTY_STRING),
+                Language.byValue(detectedLang?.language ?: EMPTY_STRING),
                 sentenceTranslationConverter.convertListInToOut(translations))
     }
 

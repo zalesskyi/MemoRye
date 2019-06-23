@@ -5,16 +5,14 @@ import androidx.lifecycle.MutableLiveData
 import com.zalesskyi.android.memorye.base.BaseLifecycleVM
 import com.zalesskyi.android.memorye.data.models.Language
 import com.zalesskyi.android.memorye.data.models.TranslationSource
-import com.zalesskyi.android.memorye.network.modules.NetworkModule
+import com.zalesskyi.android.memorye.providers.ProviderInjector.translatorProvider
 
 class MainVM(application: Application) : BaseLifecycleVM(application) {
-
-    private val translatorModule = NetworkModule.client.translator
 
     val translatorLD = MutableLiveData<TranslationSource>()
 
     fun translate(text: String, from: Language, to: Language) {
-        translatorModule.translateSentence(to, text)
+        translatorProvider.translateWord(from, to, text)
                 .doAsync(translatorLD)
     }
 }

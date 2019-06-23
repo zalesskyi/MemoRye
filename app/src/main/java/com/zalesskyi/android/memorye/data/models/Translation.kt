@@ -4,14 +4,14 @@ import kotlinx.android.parcel.Parcelize
 
 interface Translation : Model<String> {
     val source: String
-    val lang: Language
-    val tag: String?
+    var lang: Language
+    var tag: String?
     val backTranslations: List<String>?
 }
 
 @Parcelize
 data class TranslationModel(override var id: String?,
                             override val source: String,
-                            override val lang: Language,
-                            override val tag: String? = null,
+                            override var lang: Language,
+                            override var tag: String? = null,
                             override val backTranslations: List<String>? = null) : Translation

@@ -31,6 +31,6 @@ class MainActivity : BaseLifecycleActivity<MainVM>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.translate("you can use words", Language.ENGLISH, Language.RUSSIAN)
+        viewModel.translate("words", Language.ENGLISH, Language.RUSSIAN)
     }
 }

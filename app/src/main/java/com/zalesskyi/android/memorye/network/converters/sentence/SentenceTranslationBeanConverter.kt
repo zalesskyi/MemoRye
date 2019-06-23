@@ -16,7 +16,7 @@ class SentenceTranslationBeanConverterImpl : BaseConverter<SentenceTranslationBe
         TranslationModel(
                 UUID.randomUUID().toString(),
                 text ?: EMPTY_STRING,
-                Language.valueOf(lang ?: EMPTY_STRING))
+                Language.byValue(lang ?: EMPTY_STRING))
     }
 
     override fun processConvertOutToIn(outObject: Translation) =
