@@ -3,6 +3,8 @@
           xmlns:tools="http://schemas.android.com/tools"
           package="com.zalesskyi.android.memorye">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
             android:name=".MemoApp"
             android:allowBackup="true"

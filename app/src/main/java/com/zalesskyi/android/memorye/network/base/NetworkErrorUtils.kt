@@ -1,8 +1,8 @@
 package com.zalesskyi.android.memorye.network.base
 
 import com.zalesskyi.android.memorye.extensions.printLogE
-import com.zalesskyi.android.memorye.network.NetworkModule.mapper
 import com.zalesskyi.android.memorye.network.errors.*
+import com.zalesskyi.android.memorye.network.modules.NetworkModule.mapper
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Single

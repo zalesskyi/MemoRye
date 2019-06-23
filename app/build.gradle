@@ -18,11 +18,16 @@ android {
         all {
             buildConfigField "String", "SECURE_PREF_NAME", '"name_prefs.xml"'
             buildConfigField "String", "SECURE_PREF_PASSWORD", '"qwerty123"'
+            buildConfigField "String", "TRANSLATOR_API_KEY", '"723c37e3b41a4dda866020b09da6eef5"'
+            buildConfigField "String", "TRANSLATOR_API_ENPOINT", '"https://api.cognitive.microsofttranslator.com/"'
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    androidExtensions {
+        experimental = true
     }
 }
 
@@ -32,6 +37,7 @@ dependencies {
     // common
     implementation supportDependencies.lifecycleExtension
     implementation supportDependencies.design
+    implementation supportDependencies.constraintlayout
     implementation kotlinDependencies.jdk
     implementation supportDependencies.exifinterface
 
