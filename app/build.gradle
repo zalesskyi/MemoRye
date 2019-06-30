@@ -20,6 +20,7 @@ android {
             buildConfigField "String", "SECURE_PREF_PASSWORD", '"qwerty123"'
             buildConfigField "String", "TRANSLATOR_API_KEY", '"723c37e3b41a4dda866020b09da6eef5"'
             buildConfigField "String", "TRANSLATOR_API_ENPOINT", '"https://api.cognitive.microsofttranslator.com/"'
+            buildConfigField "String", "LYRICS_API_ENPOINT", '"http://api.chartlyrics.com/apiv1.asmx/"'
         }
         release {
             minifyEnabled false
@@ -49,6 +50,7 @@ dependencies {
     implementation rootProject.ext.retrofitDependencies.converter
     implementation rootProject.ext.retrofitDependencies.retrofit
     implementation rootProject.ext.retrofitDependencies.adapter
+    implementation rootProject.ext.retrofitDependencies.simpleXml
 
     // Jackson
     implementation rootProject.ext.jacksonDependencies.interceptor
@@ -57,6 +59,10 @@ dependencies {
     implementation rootProject.ext.jacksonDependencies.core
     implementation rootProject.ext.jacksonDependencies.joda
 
+    // LoggingInterceptor
+    implementation('com.github.ihsanbal:LoggingInterceptor:2.0.7') {
+        exclude group: 'org.json', module: 'json'
+    }
 
     // Stetho
     implementation "com.facebook.stetho:stetho:$stetho"

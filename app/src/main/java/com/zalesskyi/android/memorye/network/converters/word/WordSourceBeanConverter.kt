@@ -4,7 +4,7 @@ import com.zalesskyi.android.memorye.data.converters.BaseConverter
 import com.zalesskyi.android.memorye.data.models.Language
 import com.zalesskyi.android.memorye.data.models.TranslationSource
 import com.zalesskyi.android.memorye.data.models.TranslationSourceModel
-import com.zalesskyi.android.memorye.network.beans.WordSourceBean
+import com.zalesskyi.android.memorye.network.beans.translation.WordSourceBean
 import java.util.*
 
 interface WordBeanConverter
