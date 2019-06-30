@@ -4,8 +4,8 @@ import com.zalesskyi.android.memorye.BuildConfig
 import com.zalesskyi.android.memorye.network.SENTENCE_TRANSLATE_ENDPOINT
 import com.zalesskyi.android.memorye.network.TRANSLATOR_API_VERSION
 import com.zalesskyi.android.memorye.network.WORD_TRANSLATE_ENDPOINT
-import com.zalesskyi.android.memorye.network.beans.SentenceSourceBean
-import com.zalesskyi.android.memorye.network.beans.WordSourceBean
+import com.zalesskyi.android.memorye.network.beans.translation.SentenceSourceBean
+import com.zalesskyi.android.memorye.network.beans.translation.WordSourceBean
 import com.zalesskyi.android.memorye.network.requests.TranslateRequestBean
 import io.reactivex.Single
 import retrofit2.http.Body

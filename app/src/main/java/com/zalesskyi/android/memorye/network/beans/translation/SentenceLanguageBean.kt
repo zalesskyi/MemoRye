@@ -1,4 +1,4 @@
-package com.zalesskyi.android.memorye.network.beans
+package com.zalesskyi.android.memorye.network.beans.translation
 
 import com.fasterxml.jackson.annotation.JsonProperty
 

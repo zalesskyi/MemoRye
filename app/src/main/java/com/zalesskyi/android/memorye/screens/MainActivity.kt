@@ -6,7 +6,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.zalesskyi.android.memorye.R
 import com.zalesskyi.android.memorye.base.BaseLifecycleActivity
 import com.zalesskyi.android.memorye.base.NO_ID
-import com.zalesskyi.android.memorye.data.models.Language
+import com.zalesskyi.android.memorye.data.models.Lyrics
 import com.zalesskyi.android.memorye.data.models.TranslationSource
 import com.zalesskyi.android.memorye.extensions.printLog
 
@@ -23,14 +23,21 @@ class MainActivity : BaseLifecycleActivity<MainVM>() {
         "source: $it".printLog()
     }
 
+    private val lyricsObserver = Observer<List<Lyrics>> { lyricsList ->
+        lyricsList.forEach { lyrics ->
+            lyrics.printLog("LYRIC\n\n")
+        }
+    }
+
     override fun observeLiveData(viewModel: MainVM) {
         with (viewModel) {
             translatorLD.observe(this@MainActivity, translateObserver)
+            lyricsLD.observe(this@MainActivity, lyricsObserver)
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        viewModel.translate("words", Language.ENGLISH, Language.RUSSIAN)
+        viewModel.getLyricsByText("Knocking on heaven")
     }
 }
